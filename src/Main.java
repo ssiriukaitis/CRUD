@@ -72,9 +72,6 @@ public class Main {
                         break;
               }
          }
-
-
-
     }
     public static void intro(){
          System.out.println("Pasirinkite, ką norite daryti");
@@ -110,17 +107,19 @@ public class Main {
          popularnames.remove(inp - 1);
          System.out.println("Vardas sėkmingai pašalintas");
     }
-
     public static void edit(Scanner sc, ArrayList<String> popularnames) {
          System.out.println("Įveskite vardo numerį, kurį norite redaguoti");
          int pos = 0;
          while (true) {
               try {
                    pos = sc.nextInt();
-                   break;
               } catch (Exception e) {
                    sc.nextLine();
-                   System.out.println("Įveskite teisingą skaičių");
+                   System.out.println("Įveskite sąraše esančio vardo skaičių");
+                   continue;
+              }
+              if (pos <= popularnames.size() - 1 && pos > 0){
+                   break;
               }
          }
          sc.nextLine();
